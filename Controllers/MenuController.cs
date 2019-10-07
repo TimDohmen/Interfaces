@@ -11,7 +11,6 @@ namespace burgershack.Controllers
     {
       _menuService.getMenu();
       Print();
-      System.Console.WriteLine("(N)ext menu");
       string choice = Console.ReadLine().ToLower();
       Console.Clear();
 
@@ -21,8 +20,16 @@ namespace burgershack.Controllers
         case "q":
           Environment.Exit(1);
           break;
-        case "n":
-          _menuService.changeMenu();
+        case "s":
+          _menuService.changeMenu("shakes");
+          Print();
+          break;
+        case "b":
+          _menuService.changeMenu("burgers");
+          Print();
+          break;
+        case "f":
+          _menuService.changeMenu("fries");
           Print();
           break;
         default:
