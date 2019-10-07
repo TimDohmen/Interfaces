@@ -9,8 +9,9 @@ namespace burgershack.Controllers
 
     public void UserInput()
     {
-      _menuService.getFood();
+      _menuService.getMenu();
       Print();
+      System.Console.WriteLine("(N)ext menu");
       string choice = Console.ReadLine().ToLower();
       Console.Clear();
 
@@ -20,11 +21,15 @@ namespace burgershack.Controllers
         case "q":
           Environment.Exit(1);
           break;
+        case "n":
+          _menuService.changeMenu();
+          Print();
+          break;
         default:
           if (int.TryParse(choice, out int index))
           {
 
-            _menuService.getFood(index - 1);
+            _menuService.getMenu(index - 1);
             Print();
           }
           else
