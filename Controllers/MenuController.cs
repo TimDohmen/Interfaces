@@ -24,7 +24,7 @@ namespace burgershack.Controllers
           if (int.TryParse(choice, out int index))
           {
 
-            // _menuService.getFood(index - 1);
+            _menuService.getFood(index - 1);
             Print();
           }
           else

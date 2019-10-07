@@ -6,7 +6,7 @@ namespace burgershack.Models
   public class Burger : FoodItem, ISize
   {
     public string MeatType { get; set; }
-    public IEnumerable<string> Ingredients { get; set; }
+    public List<string> Ingredients { get; set; }
     public double SizeMultiplier { get; set; }
 
 
@@ -18,12 +18,14 @@ namespace burgershack.Models
 
     public override string GetTemplate()
     {
+      string ingredients = "";
+      Ingredients.ForEach(i => ingredients += $"\n{i}");
       return $@"
 Item: {Name}
 Meat: {MeatType}
 Size: {SizeMultiplier}
 
-Ingredients: {Ingredients}
+Ingredients: { ingredients }
 
 Nutritional Details:
 Calories - {Calories}
@@ -37,7 +39,7 @@ Cost: {BasePrice:c}
 
 
 
-    public Burger(string name, int calories, int fat, int protein, int carbohydrates, string meat, double price, IEnumerable<string> ingredients, double size) : base(name, calories, fat, protein, carbohydrates, price)
+    public Burger(string name, int calories, int fat, int protein, int carbohydrates, string meat, double price, List<string> ingredients, double size) : base(name, calories, fat, protein, carbohydrates, price)
     {
       MeatType = meat;
       Ingredients = ingredients;

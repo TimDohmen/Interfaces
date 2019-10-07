@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using burgershack.Models;
 
@@ -11,9 +12,16 @@ namespace burgershack.Services
 
     public void Setup()
     {
-      Burger burgerOne = new Burger("Biggest Baddest Burger", 5000, 250, 25, 500, "Ground Angus", 27.96, new string[] { "Bacon", "More Bacon", "Some Eggs" }, 3);
-      Burger burgerTwo = new Burger("V-Burg", 650, 15, 35, 100, "Impossible Patty", 16.95, new string[] { "V-Cheese", "Tomato", "Lettuce" }, 2);
+      Burger burgerOne = new Burger("Biggest Baddest Burger", 5000, 250, 25, 500, "Ground Angus", 27.96, new List<string>() { "Bacon", "More Bacon", "Some Eggs" }, 3);
+      Burger burgerTwo = new Burger("V-Burg", 650, 15, 35, 100, "Impossible Patty", 16.95, new List<string>() { "V-Cheese", "Tomato", "Lettuce" }, 2);
       Food.AddRange(new FoodItem[] { burgerOne, burgerTwo });
+    }
+    public void getFood(int index)
+    {
+      Messages.Add("Currently Selected");
+      FoodItem f = Food[index];
+      Console.Clear();
+      Messages.Add(f.GetTemplate());
     }
     public void getFood()
     {
