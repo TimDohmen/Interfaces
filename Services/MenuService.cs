@@ -27,21 +27,41 @@ namespace burgershack.Services
       Fries.AddRange(new FoodItem[] { fryOne, fryTwo });
 
       Food = Burgers;
+
+      Messages.Add($@"
+ _                                   _                _    
+| |                                 | |              | |   
+| |__  _   _ _ __ __ _  ___ _ __ ___| |__   __ _  ___| | __
+| '_ \| | | | '__/ _` |/ _ \ '__/ __| '_ \ / _` |/ __| |/ /
+| |_) | |_| | | | (_| |  __/ |  \__ \ | | | (_| | (__|   < 
+|_.__/ \__,_|_|  \__, |\___|_|  |___/_| |_|\__,_|\___|_|\_\
+                  __/ |                                    
+                 |___/           ");
       Messages.Add("Burgers Available");
 
     }
     public void changeMenu(string x)
     {
+      Console.Clear();
+      Messages.Add($@"
+ _                                   _                _    
+| |                                 | |              | |   
+| |__  _   _ _ __ __ _  ___ _ __ ___| |__   __ _  ___| | __
+| '_ \| | | | '__/ _` |/ _ \ '__/ __| '_ \ / _` |/ __| |/ /
+| |_) | |_| | | | (_| |  __/ |  \__ \ | | | (_| | (__|   < 
+|_.__/ \__,_|_|  \__, |\___|_|  |___/_| |_|\__,_|\___|_|\_\
+                  __/ |                                    
+                 |___/           ");
       if (x == "shakes")
       {
-        Food = Shakes;
         Messages.Add("Shakes Available");
+        Food = Shakes;
 
       }
       else if (x == "burgers")
       {
-        Food = Burgers;
         Messages.Add("Burgers Available");
+        Food = Burgers;
 
       }
       else if (x == "fries")
@@ -52,6 +72,7 @@ namespace burgershack.Services
     }
     public void getMenu(int index)
     {
+
       if (index < Food.Count && index > -1)
       {
         Messages.Add("Currently Selected");
@@ -67,6 +88,7 @@ namespace burgershack.Services
     }
     public void getMenu()
     {
+
       // Messages.Add("Food Available");
       for (int i = 0; i < Food.Count; i++)
       {

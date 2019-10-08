@@ -9,8 +9,10 @@ namespace burgershack.Controllers
 
     public void UserInput()
     {
+
       _menuService.getMenu();
       Print();
+
       string choice = Console.ReadLine().ToLower();
       Console.Clear();
 
