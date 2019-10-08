@@ -34,6 +34,10 @@ namespace burgershack.Controllers
           _menuService.changeMenu("fries");
           Print();
           break;
+        case "p":
+          _menuService.changeMenu("pies");
+          Print();
+          break;
         default:
           if (int.TryParse(choice, out int index))
           {

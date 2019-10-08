@@ -1,5 +1,4 @@
 using burgershack.Interfaces;
-using burgershack.Models;
 
 namespace burgershack.Models
 {
@@ -19,7 +18,8 @@ namespace burgershack.Models
     {
       return $@"
 Item: {Name}
-Flavor - Style: {Flavor} - {Style}
+Flavor: {Flavor} 
+Style: {Style}
 Size: {SizeMultiplier}
 
 
