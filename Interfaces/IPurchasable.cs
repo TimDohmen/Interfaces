@@ -1,10 +1,11 @@
 namespace burgershack.Interfaces
 {
-    public interface IPurchasable
-    {
-        double BasePrice { get; set; }
+  public interface IPurchasable
+  {
+    double BasePrice { get; set; }
 
-        string GetTemplate();
+    string GetTemplate();
 
-    }
+
+  }
 }
